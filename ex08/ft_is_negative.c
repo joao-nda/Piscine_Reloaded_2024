@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 20:24:24 by jnuno-da          #+#    #+#             */
-/*   Updated: 2024/10/15 20:56:37 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/10/14 16:02:33 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/10/14 16:09:30 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
-{
-	int	i;
+void	ft_putchar(char c);
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (--nb > 1)
-	{
-		i = i * nb;
-	}
-	return (i);
-}
-/*#include <stdio.h>
-#include <stdlib.h>
-int	main (int argc,char **argv)
+void	ft_is_negative(int n)
 {
-	if (argc == 2)
-		printf("%i",ft_iterative_factorial(atoi(argv[1])));
-}*/
+	if (n >= 0)
+		ft_putchar('P');
+	else
+		ft_putchar('N');
+}

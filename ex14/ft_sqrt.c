@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 20:24:24 by jnuno-da          #+#    #+#             */
-/*   Updated: 2024/10/15 20:56:37 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/10/15 20:56:11 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/10/15 22:22:21 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
-	int	i;
+	long	result;
+	long	i;
 
-	i = nb;
-	if (nb < 0)
+	i = 1;
+	result = 1;
+	if (nb <= 0 || nb == 2)
 		return (0);
-	if (nb == 0)
+	if (nb == 1)
 		return (1);
-	while (--nb > 1)
+	while (result <= nb)
 	{
-		i = i * nb;
+		i++;
+		result = i * i;
 	}
-	return (i);
+	return (i - 1);
 }
 /*#include <stdio.h>
-#include <stdlib.h>
-int	main (int argc,char **argv)
+int	main(void)
 {
-	if (argc == 2)
-		printf("%i",ft_iterative_factorial(atoi(argv[1])));
+	printf("%d\n", ft_sqrt(2));
+	printf("%d\n", ft_sqrt(-5));
+	printf("%d\n", ft_sqrt(6 * 6));
+	printf("%d\n", ft_sqrt(7 * 7));
+	printf("%d\n", ft_sqrt(1));
+	printf("%d\n", ft_sqrt(2058910729));
+	printf("%d\n", ft_sqrt(46340 * 46340));
+	printf("%d\n", ft_sqrt(2147483647));
 }*/

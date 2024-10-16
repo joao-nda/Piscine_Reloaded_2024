@@ -6,21 +6,18 @@
 /*   By: jnuno-da <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:47:13 by jnuno-da          #+#    #+#             */
-/*   Updated: 2024/10/16 13:49:46 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2024/10/16 21:22:39 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_strcmp(char **argv, int i, int j)
 {
 	char	*t;
-	int	c;
+	int		c;
 
 	c = 0;
 	while (argv[i][c] == argv[j][c] && argv[i][c] != '\0' && argv[j][c] != '\0')
@@ -46,6 +43,7 @@ void	ft_putstr(char *str)
 		str++;
 	}
 }
+
 int	main(int argc, char **argv)
 {
 	int	i;
@@ -54,10 +52,10 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc != 0)
 	{
-		while (argv[i] != '\0')
+		while (argv[i] != 0)
 		{
 			j = i + 1;
-			while(argv[j] != '\0')
+			while (argv[j] != 0)
 			{
 				ft_strcmp(argv, i, j);
 				j++;
@@ -65,7 +63,7 @@ int	main(int argc, char **argv)
 			i++;
 		}
 		i = 0;
-		while ( ++i < argc)
+		while (++i < argc)
 		{
 			ft_putstr(argv[i]);
 			ft_putchar('\n');
